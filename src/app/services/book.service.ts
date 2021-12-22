@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Book } from '../interfaces/book';
+import { AggregatedBook } from '../interfaces/aggregated-book';
 
 @Injectable({
   providedIn: 'root',
@@ -26,13 +27,33 @@ export class BookService {
     return this.http.get<Book>(`${this.apiBaseURL}/books/${isbn}`);
   }
 
-  getRecentlyUpdatedBooks(limit: number, statusFilter?: number): Observable<Book[]> {
+  getHighestRatedBooks(limit: number): Observable<AggregatedBook[]> {
+    const options = { params: new HttpParams().set('limit', limit) };
+
+    return this.http.get<AggregatedBook[]>(
+      `${this.apiBaseURL}/books/highest-rated`,
+      options,
+    );
+  }
+
+  getRecentlyUpdatedBooks(limit: number, statusFilter?: number): Observable<AggregatedBook[]> {
     const options = statusFilter ? {
       params: new HttpParams().set('limit', limit).append('statusFilter', statusFilter),
-    } : {};
+    } : { params: new HttpParams().set('limit', limit) };
 
-    return this.http.get<Book[]>(
+    return this.http.get<AggregatedBook[]>(
       `${this.apiBaseURL}/books/recently-updated`,
+      options,
+    );
+  }
+
+  getPopularBooks(limit: number, statusFilter?: number): Observable<AggregatedBook[]> {
+    const options = statusFilter ? {
+      params: new HttpParams().set('limit', limit).append('statusFilter', statusFilter),
+    } : { params: new HttpParams().set('limit', limit) };
+
+    return this.http.get<AggregatedBook[]>(
+      `${this.apiBaseURL}/books/popular`,
       options,
     );
   }

@@ -2,7 +2,7 @@
 <section class="books">
   <div *ngFor="let book of books">
     <a routerLink="/book/{{book.isbn}}" [state]="{ book }">
-      <img src="{{book.cover}}" height="{{imageHeight}}"/>
+      <img alt="{{book.title}} book cover" src="{{book.cover}}" height="{{imageHeight}}"/>
       {{book.title}}
     </a>
   </div>

@@ -1,0 +1,9 @@
+:host {
+  display: flex;
+  justify-content: center;
+  background: #f2f2f2;
+  padding: 10px;
+}
+footer {
+  width: 1200px;
+}

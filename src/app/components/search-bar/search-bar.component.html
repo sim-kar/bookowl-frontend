@@ -1,0 +1,7 @@
+<form class="search" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+  <input type="search" size="30" formControlName="keyword"/>
+  <select name="find" class="find" formControlName="find">
+    <option value="book">book</option>
+    <option value="author">author</option>
+  </select>
+</form>

@@ -4,5 +4,12 @@ ul {
 }
 li {
   display: inline;
-  margin: 0 8px;
+  margin: 0 0;
+}
+a {
+  padding: 8px;
+}
+a:hover {
+  background: #492080;
+  border-radius: 5px;
 }

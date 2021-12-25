@@ -5,7 +5,7 @@ import { AggregatedBook } from '../../interfaces/aggregated-book';
 @Component({
   selector: 'app-front-page',
   templateUrl: './front-page.component.html',
-  styleUrls: ['./front-page.component.css'],
+  styleUrls: ['./front-page.component.css', '../../../assets/styles/page-width.css'],
 })
 export class FrontPageComponent implements OnInit {
   popularBooks: AggregatedBook[] = [];

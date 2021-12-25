@@ -6,7 +6,7 @@ import { Book } from '../../interfaces/book';
 @Component({
   selector: 'app-search-results-page',
   templateUrl: './search-results-page.component.html',
-  styleUrls: ['./search-results-page.component.css'],
+  styleUrls: ['./search-results-page.component.css', '../../../assets/styles/page-width.css'],
 })
 export class SearchResultsPageComponent implements OnInit {
   books: Book[] = [];

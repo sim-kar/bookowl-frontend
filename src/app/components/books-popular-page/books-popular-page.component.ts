@@ -5,7 +5,11 @@ import { AggregatedBook } from '../../interfaces/aggregated-book';
 @Component({
   selector: 'app-books-popular-page',
   templateUrl: './books-popular-page.component.html',
-  styleUrls: ['./books-popular-page.component.css', '../../../assets/styles/list.css'],
+  styleUrls: [
+    './books-popular-page.component.css',
+    '../../../assets/styles/page-width.css',
+    '../../../assets/styles/list.css',
+  ],
 })
 export class BooksPopularPageComponent implements OnInit {
   popularBooks: AggregatedBook[] = [];

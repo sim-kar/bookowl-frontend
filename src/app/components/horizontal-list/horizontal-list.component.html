@@ -1,0 +1,11 @@
+<section>
+  <h2>{{header}}</h2>
+  <div class="entries">
+    <div class="entry" *ngFor="let entry of list">
+      <a routerLink="/book/{{entry.book.isbn}}" [state]="{ book: entry.book }">
+        <img alt="{{entry.book.title}} book cover" src="{{entry.book.cover}}" height="{{imageHeight}}"/>
+        <p>{{entry.book.title}}</p>
+      </a>
+    </div>
+  </div>
+</section>

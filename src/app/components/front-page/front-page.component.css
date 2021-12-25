@@ -1,6 +1,3 @@
-img {
-  border-radius: 5px;
-}
-.books {
-  display: flex;
+:host {
+  width: 1200px;
 }

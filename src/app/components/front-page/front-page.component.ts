@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../../services/book.service';
-import { Book } from '../../interfaces/book';
+import { AggregatedBook } from '../../interfaces/aggregated-book';
 
 @Component({
   selector: 'app-front-page',
@@ -8,18 +8,25 @@ import { Book } from '../../interfaces/book';
   styleUrls: ['./front-page.component.css'],
 })
 export class FrontPageComponent implements OnInit {
-  books: Book[] = [];
-  imageHeight: number = 192;
+  popularBooks: AggregatedBook[] = [];
+  recentBooks: AggregatedBook[] = [];
 
   constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
-    this.searchBooksByTitle('lord of the rings');
+    this.getPopularBooks();
+    this.getRecentlyUpdatedBooks();
   }
 
-  searchBooksByTitle(title: string): void {
-    this.bookService.searchBooksByTitle(title, 8).subscribe((books) => {
-      this.books = books;
+  getPopularBooks() {
+    this.bookService.getPopularBooks(8).subscribe((books) => {
+      this.popularBooks = books;
+    });
+  }
+
+  getRecentlyUpdatedBooks() {
+    this.bookService.getRecentlyUpdatedBooks(8).subscribe((books) => {
+      this.recentBooks = books;
     });
   }
 }

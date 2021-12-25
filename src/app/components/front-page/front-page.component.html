@@ -1,9 +1,2 @@
-<h2>Books</h2>
-<section class="books">
-  <div *ngFor="let book of books">
-    <a routerLink="/book/{{book.isbn}}" [state]="{ book }">
-      <img alt="{{book.title}} book cover" src="{{book.cover}}" height="{{imageHeight}}"/>
-      {{book.title}}
-    </a>
-  </div>
-</section>
+<app-horizontal-list [header]="'Popular books'" [list]="popularBooks"></app-horizontal-list>
+<app-horizontal-list [header]="'Recently added books'" [list]="recentBooks"></app-horizontal-list>

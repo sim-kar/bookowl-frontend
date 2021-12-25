@@ -1,11 +1,16 @@
 <header>
-  <h1>
-    <a routerLink="/">
-      book<span class="bold">owl</span>
-    </a>
-  </h1>
-  <div class="right">
+  <div class="wrapper">
+      <h1>
+      <a class="title" routerLink="/">
+        book<span class="bold">owl</span>
+      </a>
+    </h1>
+<!-- TODO: make nav component   -->
+    <a routerLink="/books/popular">Books</a>
+    <a>Reviews</a>
+  </div>
+  <div class="wrapper">
     <app-search-bar></app-search-bar>
-    <router-outlet name="login-navigation"></router-outlet>
+    <router-outlet name="loginNavigation"></router-outlet>
   </div>
 </header>

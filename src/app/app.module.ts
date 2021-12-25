@@ -13,6 +13,8 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { FrontPageComponent } from './components/front-page/front-page.component';
 import { BookPageComponent } from './components/book-page/book-page.component';
 import { SearchResultsPageComponent } from './components/search-results-page/search-results-page.component';
+import { BooksPopularPageComponent } from './components/books-popular-page/books-popular-page.component';
+import { HorizontalListComponent } from './components/horizontal-list/horizontal-list.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { SearchResultsPageComponent } from './components/search-results-page/sea
     FrontPageComponent,
     BookPageComponent,
     SearchResultsPageComponent,
+    BooksPopularPageComponent,
+    HorizontalListComponent,
   ],
   imports: [
     BrowserModule,

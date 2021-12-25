@@ -7,13 +7,17 @@ import { BookPageComponent } from './components/book-page/book-page.component';
 import {
   SearchResultsPageComponent,
 } from './components/search-results-page/search-results-page.component';
+import {
+  BooksPopularPageComponent,
+} from './components/books-popular-page/books-popular-page.component';
 
 const routes: Routes = [
   { path: '', component: FrontPageComponent },
   { path: 'book/:id', component: BookPageComponent },
+  { path: 'books/popular', component: BooksPopularPageComponent },
   { path: 'search/:find/:keyword', component: SearchResultsPageComponent },
-  { path: '', component: LoginNavigationComponent, outlet: 'login-navigation' },
-  { path: 'user', component: UserNavigationComponent, outlet: 'login-navigation' },
+  { path: '', component: LoginNavigationComponent, outlet: 'loginNavigation' },
+  { path: 'user', component: UserNavigationComponent, outlet: 'loginNavigation' },
 ];
 
 @NgModule({

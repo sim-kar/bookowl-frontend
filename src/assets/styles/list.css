@@ -1,0 +1,75 @@
+/* Shared styles for pages with lists: popular books, reviews, etc. */
+:host {
+  width: 1200px;
+}
+img {
+  border-radius: 5px;
+  max-width: 50px;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ul li:nth-child(even) {
+  background: #f2f2f2;
+}
+h3, p {
+  margin: 0;
+  padding: 0;
+}
+.entry {
+  display: flex;
+  padding: 12px 4px 8px 4px;
+  /*margin-bottom: 4px;*/
+  border-top: lightgrey solid 1px;
+}
+/* max-width of img and min-width of this container keeps width of column consistent */
+.cover {
+  min-width: 50px;
+  margin-right: 4px;
+}
+.header {
+  display: flex;
+  align-items: baseline;
+  white-space: pre;
+  margin-bottom: 4px;
+}
+.text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: justify;
+}
+/* Alternative method for replacing overflow with ellipsis if webkit version isn't usable */
+/* From: https://hackingui.com/a-pure-css-solution-for-multiline-text-truncation/ */
+.block-with-text {
+  overflow: hidden;
+  position: relative;
+  line-height: 1.2em;
+  max-height: 3.6em;
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: 1em;
+}
+.block-with-text:before {
+  content: '...';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.block-with-text:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.2em;
+  background: white;
+}

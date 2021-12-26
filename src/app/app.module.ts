@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginNavigationComponent } from './components/login-navigation/login-navigation.component';
-import { UserNavigationComponent } from './components/user-navigation/user-navigation.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { FrontPageComponent } from './components/front-page/front-page.component';
 import { BookPageComponent } from './components/book-page/book-page.component';
 import { SearchResultsPageComponent } from './components/search-results-page/search-results-page.component';
 import { BooksPopularPageComponent } from './components/books-popular-page/books-popular-page.component';
 import { HorizontalListComponent } from './components/horizontal-list/horizontal-list.component';
+import { SignUpPageComponent } from './components/sign-up-page/sign-up-page.component';
+import { LoginPageComponent } from './components/login-page/login-page.component';
+import { httpInterceptorProviders } from './http-interceptors';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,14 @@ import { HorizontalListComponent } from './components/horizontal-list/horizontal
     HeaderComponent,
     FooterComponent,
     LoginNavigationComponent,
-    UserNavigationComponent,
     SearchBarComponent,
     FrontPageComponent,
     BookPageComponent,
     SearchResultsPageComponent,
     BooksPopularPageComponent,
     HorizontalListComponent,
+    SignUpPageComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,7 @@ import { HorizontalListComponent } from './components/horizontal-list/horizontal
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

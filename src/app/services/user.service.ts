@@ -39,4 +39,12 @@ export class UserService {
       password,
     });
   }
+
+  login(username: string, password: string):
+  Observable<{ accessToken: string, username: string }> {
+    return this.http.post<{ accessToken: string, username: string }>(
+      `${this.apiBaseURL}/users/login`,
+      { username, password },
+    );
+  }
 }

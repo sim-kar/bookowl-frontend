@@ -8,24 +8,24 @@ export class TokenStorageService {
   userKey: string = 'auth-user';
 
   logOut(): void {
-    window.sessionStorage.clear();
+    window.localStorage.clear();
   }
 
   setToken(token: string): void {
-    window.sessionStorage.removeItem(this.tokenKey);
-    window.sessionStorage.setItem(this.tokenKey, token);
+    window.localStorage.removeItem(this.tokenKey);
+    window.localStorage.setItem(this.tokenKey, token);
   }
 
   getToken(): string | null {
-    return window.sessionStorage.getItem(this.tokenKey);
+    return window.localStorage.getItem(this.tokenKey);
   }
 
   setUser(username: string) {
-    window.sessionStorage.removeItem(this.userKey);
-    window.sessionStorage.setItem(this.userKey, username);
+    window.localStorage.removeItem(this.userKey);
+    window.localStorage.setItem(this.userKey, username);
   }
 
   getUser(): string | null {
-    return window.sessionStorage.getItem(this.userKey);
+    return window.localStorage.getItem(this.userKey);
   }
 }

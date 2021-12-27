@@ -1,0 +1,29 @@
+<section>
+  <h2>Log in</h2>
+  <!-- add css class .submitted after form is submitted -->
+  <form
+    class="login"
+    [ngClass]="{ 'submitted': f.submitted }"
+    #f="ngForm"
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <label>Username
+      <input type="text" size="{{inputSize}}" required formControlName="username"/>
+    </label>
+    <div class="error" *ngIf="username?.invalid && username?.touched">
+      <div *ngIf="username?.errors?.['required']">Please enter a username.</div>
+    </div>
+    <label>Password
+      <input type="password" size="{{inputSize}}" required formControlName="password"/>
+    </label>
+    <div class="error" *ngIf="password?.invalid && password?.touched">
+      <div *ngIf="password?.errors?.['required']">Please enter a password.</div>
+      <div *ngIf="password?.errors?.['minlength']">Password must be at least 8 characters.</div>
+    </div>
+    <button>Log in</button>
+    <div class="error center" *ngIf="f.submitted && loginFailed">Log in failed. {{errorMessage}}</div>
+    <div class="success center" *ngIf="loggedIn">Logged in!</div>
+    <div class="bottom-link">Don't have an account? <a routerLink="/signup">Sign up</a></div>
+  </form>
+</section>

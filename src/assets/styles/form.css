@@ -1,0 +1,62 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 10pt;
+}
+input, select {
+  font-size: 12pt;
+  padding: 8px 8px;
+  margin: 4px 0;
+  background: #f4f7f9;
+  border: lightgrey solid 1px;
+  border-radius: 2px;
+}
+input:focus {
+  border: #0060df solid 1px;
+  outline-style: none;
+}
+button {
+  padding: 8px 8px;
+  margin: 16px 0;
+  background: #492080;
+  color: white;
+  border: #321657 solid 1px;
+  border-radius: 5px;
+}
+.error {
+  color: #a23637;
+  background: #f4d2d2;
+  padding: 8px 12px;
+  margin: 4px 0 8px 0;
+  border-radius: 2px;
+  font-family: sans-serif;
+  font-size: 10pt;
+}
+.success {
+  color: #36a237;
+  background: #d2f4d2;
+  padding: 8px 12px;
+  margin: 4px 0 8px 0;
+  border-radius: 2px;
+  font-family: sans-serif;
+  font-size: 10pt;
+}
+.bottom-link {
+  text-align: center;
+  margin: 8px 0;
+}
+.center {
+  text-align: center;
+}
+/*.submitted input:not(:focus):invalid,*/
+/*.submitted select:not(:focus):invalid,*/
+/*.submitted textarea:not(:focus):invalid {*/
+/*  border: 1px solid red;*/
+/*  box-shadow: 0 0 3px rgba(255,0,0,1);*/
+/*}*/

@@ -1,0 +1,63 @@
+<section>
+  <h2>Create account</h2>
+  <!-- add css class .submitted after form is submitted -->
+  <form
+    class="sign-up"
+    [ngClass]="{ 'submitted': f.submitted }"
+    #f="ngForm"
+    [formGroup]="signUpForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <label>Username
+      <input
+        type="text"
+        size="{{inputSize}}"
+        required minlength="2"
+        maxlength="20"
+        autofocus
+        formControlName="username"/>
+    </label>
+    <div class="error" *ngIf="username?.invalid && username?.touched">
+      <div *ngIf="username?.errors?.['required']">Please enter a username.</div>
+      <div *ngIf="username?.errors?.['minlength']">Username must be at least 2 characters.</div>
+      <div *ngIf="username?.errors?.['maxLength']">Username can't be at longer than 20 characters.</div>
+    </div>
+    <label>E-mail
+      <input type="email" size="{{inputSize}}" required email formControlName="email"/>
+    </label>
+    <div class="error" *ngIf="email?.invalid && email?.touched">
+      <div *ngIf="email?.errors?.['required']">Please enter an e-mail address.</div>
+      <div *ngIf="email?.errors?.['email']">Please enter a valid e-mail address.</div>
+    </div>
+      <label>Password
+      <input type="password" size="{{inputSize}}" required minlength="8" formControlName="password"/>
+    </label>
+    <div class="password-requirements">
+      <div *ngIf="password?.errors?.['minlength']">Password must be at least 8 characters.</div>
+      <div class="error" *ngIf="password?.errors?.['required'] && password?.touched">
+        Please enter a password.
+      </div>
+    </div>
+    <label>Birthday
+      <input type="date" required formControlName="birthday"/>
+    </label>
+    <div class="error" *ngIf="birthday?.invalid && birthday?.touched">
+      <div *ngIf="birthday?.errors?.['required']">Please enter your birthday.</div>
+    </div>
+    <label>Gender
+      <select name="gender" class="gender" required formControlName="gender">
+        <option value="male">male</option>
+        <option value="female">female</option>
+        <option value="other">other</option>
+        <option value="private">private</option>
+      </select>
+    </label>
+    <div class="error" *ngIf="gender?.invalid && gender?.touched">
+      <div *ngIf="gender?.errors?.['required']">Please select your gender.</div>
+    </div>
+    <button>Create account</button>
+    <div class="error center" *ngIf="f.submitted && signUpFailed">Sign up failed. {{errorMessage}}</div>
+    <div class="success center" *ngIf="signedUp">Your registration was successful.</div>
+    <div class="bottom-link">Have an account already? <a routerLink="/login">Log in</a></div>
+  </form>
+</section>

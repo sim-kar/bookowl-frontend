@@ -17,6 +17,7 @@ import { HorizontalListComponent } from './components/horizontal-list/horizontal
 import { SignUpPageComponent } from './components/sign-up-page/sign-up-page.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { httpInterceptorProviders } from './http-interceptors';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { httpInterceptorProviders } from './http-interceptors';
     HorizontalListComponent,
     SignUpPageComponent,
     LoginPageComponent,
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,10 @@
 <nav>
-  <ul>
-    <li><a>sign up</a></li>
-    <li><a>log in</a></li>
+  <ul *ngIf="loggedIn">
+    <li><a routerLink="/user/{{username}}">{{username}}</a></li>
+    <li><a (click)="logout()">Log out</a></li>
+  </ul>
+  <ul *ngIf="!loggedIn">
+    <li><a routerLink="/signup">Sign up</a></li>
+    <li><a routerLink="/login">Log in</a></li>
   </ul>
 </nav>

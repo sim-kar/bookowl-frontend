@@ -6,4 +6,5 @@
 }
 footer {
   width: 1200px;
+  white-space: nowrap;
 }

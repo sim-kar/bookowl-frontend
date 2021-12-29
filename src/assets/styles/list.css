@@ -15,8 +15,12 @@ ul {
 ul li:nth-child(even) {
   background: #f2f2f2;
 }
-h3, p {
+h3 {
   margin: 0;
+  padding: 0;
+}
+p {
+  margin: 4px 0 0 0;
   padding: 0;
 }
 .entry {
@@ -34,7 +38,6 @@ h3, p {
   display: flex;
   align-items: baseline;
   white-space: pre;
-  margin-bottom: 4px;
 }
 .text {
   display: -webkit-box;

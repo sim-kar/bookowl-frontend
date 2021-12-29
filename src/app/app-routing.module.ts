@@ -10,12 +10,16 @@ import {
 } from './components/books-popular-page/books-popular-page.component';
 import { SignUpPageComponent } from './components/sign-up-page/sign-up-page.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
+import { ReviewsPageComponent } from './components/reviews-page/reviews-page.component';
+import { UserPageComponent } from './components/user-page/user-page.component';
 
 const routes: Routes = [
   { path: '', component: FrontPageComponent },
   { path: 'book/:id', component: BookPageComponent },
   { path: 'books/popular', component: BooksPopularPageComponent },
+  { path: 'reviews', component: ReviewsPageComponent },
   { path: 'search/:find/:keyword', component: SearchResultsPageComponent },
+  { path: 'user/:username', component: UserPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: SignUpPageComponent },
 ];

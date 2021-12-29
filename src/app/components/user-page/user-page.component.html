@@ -1,0 +1,5 @@
+<h1>{{user.username}}'s bookshelf</h1>
+<div>Joined {{joined}} <span class="material-icons icon">person</span> {{age}} / {{user.gender}}</div>
+<app-horizontal-list *ngIf="wantToRead.length !== 0" [header]="'Want to read'" [list]="wantToRead"></app-horizontal-list>
+<app-horizontal-list *ngIf="reading.length !== 0" [header]="'Reading'" [list]="reading"></app-horizontal-list>
+<app-horizontal-list *ngIf="read.length !== 0" [header]="'Read'" [list]="read"></app-horizontal-list>

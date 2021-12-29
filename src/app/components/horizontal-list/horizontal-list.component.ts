@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AggregatedBook } from '../../interfaces/aggregated-book';
+import { Book } from '../../interfaces/book';
 
 @Component({
   selector: 'app-horizontal-list',
@@ -7,11 +7,10 @@ import { AggregatedBook } from '../../interfaces/aggregated-book';
   styleUrls: ['./horizontal-list.component.css', '../../../assets/styles/page-width.css'],
 })
 export class HorizontalListComponent implements OnInit {
-  @Input() list: AggregatedBook[] = [];
+  @Input() list: Book[] = [];
   @Input() header: string = '';
   imageHeight: number = 192;
-
-  constructor() { }
+  maxEntries: number = 8;
 
   ngOnInit(): void {
   }

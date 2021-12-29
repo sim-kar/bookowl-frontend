@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../../services/book.service';
 import { AggregatedBook } from '../../interfaces/aggregated-book';
+import { Book } from '../../interfaces/book';
 
 @Component({
   selector: 'app-front-page',
@@ -8,8 +9,8 @@ import { AggregatedBook } from '../../interfaces/aggregated-book';
   styleUrls: ['./front-page.component.css', '../../../assets/styles/page-width.css'],
 })
 export class FrontPageComponent implements OnInit {
-  popularBooks: AggregatedBook[] = [];
-  recentBooks: AggregatedBook[] = [];
+  popularBooks: Book[] = [];
+  recentBooks: Book[] = [];
 
   constructor(private bookService: BookService) { }
 
@@ -20,13 +21,13 @@ export class FrontPageComponent implements OnInit {
 
   getPopularBooks() {
     this.bookService.getPopularBooks(8).subscribe((books) => {
-      this.popularBooks = books;
+      books.forEach((entry) => this.popularBooks.push(entry.book));
     });
   }
 
   getRecentlyUpdatedBooks() {
     this.bookService.getRecentlyUpdatedBooks(8).subscribe((books) => {
-      this.recentBooks = books;
+      books.forEach((entry) => this.recentBooks.push(entry.book));
     });
   }
 }

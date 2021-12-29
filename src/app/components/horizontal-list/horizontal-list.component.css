@@ -5,20 +5,26 @@ a {
   color: inherit;
   text-decoration: none;
 }
-.entries {
+/* take up all available horizontal space and adjust space between entries */
+.entries-max {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+}
+/* align entries left with a gap between them */
+.entries {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
   width: 100%;
 }
 .entry {
   display: flex;
   justify-content: center;
   max-width: 140px;
+  text-align: center;
 }
 .entry img {
   display: block;
   margin: 0 auto;
-}
-.entry p {
-  text-align: center;
 }

@@ -1,0 +1,22 @@
+<div class="rating">
+  <div [ngClass]="active ? 'enabled' : 'disabled'" class="material-icons">
+    <span
+      *ngIf="active"
+      class="reset"
+      (click)="reset()"
+      (mouseover)="previewRating(-1)"
+      (mouseout)="setStars()"
+    >
+      disabled_by_default
+    </span>
+    <span
+      *ngFor="let star of stars; let i = index"
+      class="star"
+      (click)="active && setRating(i)"
+      (mouseover)="active && previewRating(i)"
+      (mouseout)="active && setStars()"
+    >
+      {{star}}
+    </span>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+.rating {
+  margin: 0 4px;
+}
+.enabled {
+  color: goldenrod;
+}
+.enabled:hover {
+  cursor: pointer;
+  color: orange;
+}
+.disabled {
+  color: darkgoldenrod;
+}
+.star {
+  font-size: 16pt;
+  margin: 0 -4px;
+}
+.reset {
+  font-size: 14pt;
+  color: #a23637;
+  margin: 0 -2px 0 -4px;
+}
+.reset:hover {
+  cursor: pointer;
+  color: #e11819;
+}

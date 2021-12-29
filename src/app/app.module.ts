@@ -18,6 +18,9 @@ import { SignUpPageComponent } from './components/sign-up-page/sign-up-page.comp
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { httpInterceptorProviders } from './http-interceptors';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { ReviewsPageComponent } from './components/reviews-page/reviews-page.component';
+import { StarRatingComponent } from './components/star-rating/star-rating.component';
+import { UserPageComponent } from './components/user-page/user-page.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,9 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     SignUpPageComponent,
     LoginPageComponent,
     NavigationComponent,
+    ReviewsPageComponent,
+    StarRatingComponent,
+    UserPageComponent,
   ],
   imports: [
     BrowserModule,

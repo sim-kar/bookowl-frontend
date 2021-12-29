@@ -5,8 +5,16 @@
         book<span class="bold">owl</span>
       </a>
     </h1>
-    <app-navigation [links]="[{ text: 'Books', target: '/books/popular' }, { text: 'Reviews', target: '/reviews' }]">
-    </app-navigation>
+    <app-dropdown-menu
+      text="Books"
+      [links]="[
+        { text: 'Popular', target: '/books/popular' },
+        { text: 'Highest rated', target: '/books/highest-rated' },
+        { text: 'Recent', target: '/books/recent' }
+      ]"
+    >
+    </app-dropdown-menu>
+    <app-navigation [links]="[{ text: 'Reviews', target: '/reviews' }]"></app-navigation>
   </div>
   <div class="container">
     <app-search-bar></app-search-bar>

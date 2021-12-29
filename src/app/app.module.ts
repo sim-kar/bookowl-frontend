@@ -21,6 +21,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { ReviewsPageComponent } from './components/reviews-page/reviews-page.component';
 import { StarRatingComponent } from './components/star-rating/star-rating.component';
 import { UserPageComponent } from './components/user-page/user-page.component';
+import { DropdownMenuComponent } from './components/dropdown-menu/dropdown-menu.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { UserPageComponent } from './components/user-page/user-page.component';
     ReviewsPageComponent,
     StarRatingComponent,
     UserPageComponent,
+    DropdownMenuComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,11 @@
+  <nav class="dropdown">
+    <a>
+      {{text}}
+      <span class="material-icons icon">arrow_drop_down</span>
+    </a>
+    <ul class="dropdown-content">
+      <li *ngFor="let link of links">
+        <a routerLink="{{link.target}}">{{link.text}}</a>
+      </li>
+    </ul>
+  </nav>

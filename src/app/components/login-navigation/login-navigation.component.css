@@ -1,0 +1,36 @@
+:host {
+  /* needs to move 1px down to make it pixel perfect */
+  margin-top: 1px;
+}
+.icon {
+  vertical-align: -25%;
+  margin: 0 -5px;
+}
+.dropdown {
+  overflow: hidden;
+  position: relative;
+}
+.dropdown-content > li {
+  display: block;
+  color: #321657;
+  margin: 10px;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 7px;
+  top: 27px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 2px 2px 1px 0 rgba(0, 0, 0, 0.3);
+  min-width: 160px;
+  z-index: 1;
+  padding: 10px;
+}
+.dropdown-content > li > a:hover {
+  background: none;
+  color: inherit;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}

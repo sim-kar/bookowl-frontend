@@ -1,7 +1,27 @@
 <nav>
   <ul *ngIf="loggedIn">
-    <li><a routerLink="/user/{{username}}">{{username}}</a></li>
-    <li><a (click)="logout()">Log out</a></li>
+    <li class="dropdown">
+      <a routerLink="/user/{{username}}">
+        {{username}}
+        <span class="material-icons icon">arrow_drop_down</span>
+      </a>
+      <!-- unable to easily pass icons and methods to dropdown-list, so making manual dropdown instead of component -->
+      <ul class="dropdown-content">
+        <li>
+          <a routerLink="/user/{{username}}">Bookshelf</a>
+        </li>
+        <li>
+          <a routerLink="/user/settings/{{username}}">
+            <span class="material-icons icon">manage_accounts</span> Settings
+          </a>
+        </li>
+        <li>
+          <a (click)="logout()">
+            <span class="material-icons icon">logout</span> Log out
+          </a>
+        </li>
+      </ul>
+    </li>
   </ul>
   <ul *ngIf="!loggedIn">
     <li><a routerLink="/signup">Sign up</a></li>

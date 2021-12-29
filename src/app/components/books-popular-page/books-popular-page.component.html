@@ -11,7 +11,7 @@
         <a routerLink="/book/{{entry.book.isbn}}" [state]="{ book: entry.book }">
           <h3>{{entry.book.title}}</h3>
         </a>
-        <p> by {{entry.book.authors}}</p>
+        <span> by {{entry.book.authors}}</span>
       </div>
       <p class="text">{{entry.book.description}}</p>
     </div>

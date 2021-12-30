@@ -1,0 +1,24 @@
+<h2>Highest rated books</h2>
+<ul>
+  <li class="entry" *ngFor="let entry of highestRatedBooks">
+    <div class="cover">
+      <a routerLink="/book/{{entry.book.isbn}}" [state]="{ book: entry.book }">
+        <img alt="{{entry.book.title}} book cover" src="{{entry.book.cover}}" width="{{imageWidth}}"/>
+      </a>
+    </div>
+    <div>
+      <div class="header">
+        <a routerLink="/book/{{entry.book.isbn}}" [state]="{ book: entry.book }">
+          <h3>{{entry.book.title}}</h3>
+        </a>
+        <span> by {{entry.book.authors}}</span>
+      </div>
+      <app-star-rating
+        [maxRating]="5"
+        [rating]="entry.averageRating ? entry.averageRating : 0"
+        [active]="false"
+      ></app-star-rating>
+      <p class="text">{{entry.book.description}}</p>
+    </div>
+  </li>
+</ul>

@@ -12,11 +12,19 @@ import { SignUpPageComponent } from './components/sign-up-page/sign-up-page.comp
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { ReviewsPageComponent } from './components/reviews-page/reviews-page.component';
 import { UserPageComponent } from './components/user-page/user-page.component';
+import {
+  BooksHighestPageComponent,
+} from './components/books-highest-page/books-highest-page.component';
+import {
+  BooksRecentPageComponent,
+} from './components/books-recent-page/books-recent-page.component';
 
 const routes: Routes = [
   { path: '', component: FrontPageComponent },
   { path: 'book/:id', component: BookPageComponent },
   { path: 'books/popular', component: BooksPopularPageComponent },
+  { path: 'books/highest-rated', component: BooksHighestPageComponent },
+  { path: 'books/recent', component: BooksRecentPageComponent },
   { path: 'reviews', component: ReviewsPageComponent },
   { path: 'search/:find/:keyword', component: SearchResultsPageComponent },
   { path: 'user/:username', component: UserPageComponent },

@@ -22,6 +22,8 @@ import { ReviewsPageComponent } from './components/reviews-page/reviews-page.com
 import { StarRatingComponent } from './components/star-rating/star-rating.component';
 import { UserPageComponent } from './components/user-page/user-page.component';
 import { DropdownMenuComponent } from './components/dropdown-menu/dropdown-menu.component';
+import { BooksHighestPageComponent } from './components/books-highest-page/books-highest-page.component';
+import { BooksRecentPageComponent } from './components/books-recent-page/books-recent-page.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { DropdownMenuComponent } from './components/dropdown-menu/dropdown-menu.
     StarRatingComponent,
     UserPageComponent,
     DropdownMenuComponent,
+    BooksHighestPageComponent,
+    BooksRecentPageComponent,
   ],
   imports: [
     BrowserModule,

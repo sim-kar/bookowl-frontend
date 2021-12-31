@@ -11,13 +11,10 @@
         <a routerLink="/book/{{entry.book.isbn}}" [state]="{ book: entry.book }">
           <h3>{{entry.book.title}}</h3>
         </a>
-        <span> by {{entry.book.authors}}</span>
+        <span> by {{entry.book.authors}} </span>
+        <span class="material-icons star">star</span>
+        <span class="rating">{{entry.averageRating}}</span>
       </div>
-      <app-star-rating
-        [maxRating]="5"
-        [rating]="entry.averageRating ? entry.averageRating : 0"
-        [active]="false"
-      ></app-star-rating>
       <p class="text">{{entry.book.description}}</p>
     </div>
   </li>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../../services/book.service';
-import { AggregatedBook } from '../../interfaces/aggregated-book';
 import { Book } from '../../interfaces/book';
 
 @Component({

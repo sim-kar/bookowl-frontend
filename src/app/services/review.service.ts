@@ -16,6 +16,10 @@ export class ReviewService {
     return this.http.get<Review[]>(`${this.apiBaseURL}/reviews/`);
   }
 
+  getReviewsForBook(isbn: string): Observable<Review[]> {
+    return this.http.get<Review[]>(`${this.apiBaseURL}/reviews/${isbn}`);
+  }
+
   getReview(username: string, isbn: string): Observable<Review> {
     return this.http.get<Review>(`${this.apiBaseURL}/reviews/${username}/book/${isbn}`);
   }

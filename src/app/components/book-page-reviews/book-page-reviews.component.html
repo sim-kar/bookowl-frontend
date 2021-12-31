@@ -1,0 +1,31 @@
+<section>
+  <!-- Don't show section for writing a review if user hasn't read book -->
+  <div *ngIf="status > 0">
+    <button (click)="toggleReview()">Write a review</button>
+    <div *ngIf="writeReview">
+      <textarea rows="8" cols="60" spellcheck="true">{{userReview ? userReview.text : ''}}</textarea>
+      <div class="right"><button>Post review</button></div>
+    </div>
+  </div>
+  <ul>
+    <li *ngFor="let review of reviews">
+      <div class="spaced">
+        <div class="header">
+          <h3>
+            <a routerLink="/user/{{review.username}}">{{review.username}}</a>
+          </h3>
+          <span> rated it </span>
+          <span class="rating">
+            <app-star-rating [maxRating]="5" [rating]="review.stars" [active]="false"></app-star-rating>
+          </span>
+        </div>
+        {{getDate(review.date)}}
+      </div>
+      <p class="text">{{review.text}}</p>
+      <a
+        routerLink="/reviews/{{review.username}}/book/{{review.book.isbn}}"
+        [state]="{ review: review }"
+        class="link">see full review</a>
+    </li>
+  </ul>
+</section>

@@ -1,0 +1,50 @@
+section {
+  display: block;
+  margin-top: 24px;
+  /* Keep width same as textarea + padding */
+  max-width: 612px;
+}
+h4 {
+  margin-bottom: 0;
+  font-family: sans-serif;
+  font-size: 11pt;
+}
+h2 {
+  margin: 0;
+}
+textarea {
+  resize: none;
+  max-width: 600px;
+  padding: 8px;
+}
+button {
+  display: inline-block;
+  margin: 0;
+}
+ul {
+  margin-top: 16px;
+}
+ul > li:nth-child(even) {
+  background: none;
+}
+li {
+  margin: 4px 0 12px 0;
+}
+.spaced {
+  display: flex;
+  justify-content: space-between;
+}
+.rating {
+  align-self: center;
+  margin-top: -2px;
+}
+.right {
+  text-align: right;
+}
+.link {
+  display: block;
+  font-family: sans-serif;
+  font-size: 11pt;
+  color: #492080;
+  margin-top: 4px;
+}

@@ -1,4 +1,44 @@
-<h2>{{book.title}}</h2>
-<img alt="{{book.title}} book cover" src="{{book.cover}}"/>
-<p>{{book.description}}</p>
-<button (click)="addToBookshelf()">add</button>
+<section class="book">
+  <div>
+    <div class="cover">
+    <img alt="{{book.title}} book cover" src="{{book.cover}}"/>
+    <span
+      [ngClass]="{
+        'want-to-read': userStatus === 0,
+        'reading': userStatus === 1,
+        'read': userStatus === 2
+      }"
+      class="material-icons bookmark"
+    >bookmark</span>
+    </div>
+    <!-- Let the user update status if logged in -->
+    <select *ngIf="username">
+      <option [selected]="userStatus === -1" (click)="remove()">Unread</option>
+      <option [selected]="userStatus === 0" (click)="addStatus(0)">Want to read</option>
+      <option [selected]="userStatus === 1" (click)="addStatus(1)">Reading</option>
+      <option [selected]="userStatus === 2" (click)="addStatus(2)">Read</option>
+    </select>
+    <!-- Don't show rating if user hasn't read book -->
+    <div *ngIf="userStatus > 0" class="rating">
+      <app-star-rating [maxRating]="5" [active]="true" ></app-star-rating>
+    </div>
+  </div>
+  <div class="info">
+    <h2>{{book.title}}</h2>
+    <h3>by {{book.authors}}</h3>
+    <p>{{book.description}}</p>
+    <ul>
+      <li>Published {{book.published}} by {{book.publisher}}</li>
+      <li>ISBN {{book.isbn}}</li>
+      <li>{{book.pages}} pages</li>
+      <li>{{language}}</li>
+    </ul>
+    <h4>Categories</h4>
+    <ul class="categories">
+      <li *ngFor="let category of book.categories">
+        {{category}}
+      </li>
+    </ul>
+    <app-book-page-reviews [status]="userStatus"></app-book-page-reviews>
+  </div>
+</section>

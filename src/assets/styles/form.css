@@ -9,7 +9,7 @@ label {
   font-weight: bold;
   font-size: 10pt;
 }
-input, select {
+input, select, textarea {
   font-size: 12pt;
   padding: 8px 8px;
   margin: 4px 0;
@@ -17,7 +17,7 @@ input, select {
   border: lightgrey solid 1px;
   border-radius: 2px;
 }
-input:focus {
+input:focus, textarea:focus {
   border: #0060df solid 1px;
   outline-style: none;
 }
@@ -54,9 +54,3 @@ button {
 .center {
   text-align: center;
 }
-/*.submitted input:not(:focus):invalid,*/
-/*.submitted select:not(:focus):invalid,*/
-/*.submitted textarea:not(:focus):invalid {*/
-/*  border: 1px solid red;*/
-/*  box-shadow: 0 0 3px rgba(255,0,0,1);*/
-/*}*/

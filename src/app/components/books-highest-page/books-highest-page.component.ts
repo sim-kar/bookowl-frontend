@@ -26,4 +26,15 @@ export class BooksHighestPageComponent implements OnInit {
       this.highestRatedBooks = books;
     });
   }
+
+  /* Formats a float to have 2 digits after the decimal point; integers are left untouched */
+  formatRating(rating: number | undefined): string {
+    let output = '';
+    
+    if (rating) {
+      output = Number.isInteger(rating) ? rating.toString() : rating.toFixed(2);
+    }
+
+    return output;
+  }
 }

@@ -18,14 +18,16 @@ import {
 import {
   BooksRecentPageComponent,
 } from './components/books-recent-page/books-recent-page.component';
+import { ReviewPageComponent } from './components/review-page/review-page.component';
 
 const routes: Routes = [
   { path: '', component: FrontPageComponent },
-  { path: 'book/:id', component: BookPageComponent },
+  { path: 'book/:isbn', component: BookPageComponent },
   { path: 'books/popular', component: BooksPopularPageComponent },
   { path: 'books/highest-rated', component: BooksHighestPageComponent },
   { path: 'books/recent', component: BooksRecentPageComponent },
   { path: 'reviews', component: ReviewsPageComponent },
+  { path: 'reviews/:username/book/:isbn', component: ReviewPageComponent },
   { path: 'search/:find/:keyword', component: SearchResultsPageComponent },
   { path: 'user/:username', component: UserPageComponent },
   { path: 'login', component: LoginPageComponent },

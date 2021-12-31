@@ -1,0 +1,19 @@
+<section *ngIf="review" class="review">
+  <div>
+    <div class="cover">
+      <img alt="{{review.book.title}} book cover" src="{{review.book.cover}}"/>
+    </div>
+  </div>
+  <div class="info">
+    <h2>
+      <a routerLink="/book/{{review.book.isbn}}" [state]="review.book">{{review.book.title}}</a>
+    </h2>
+    <h3>by {{review.book.authors}}</h3>
+    <div class="spaced">
+      <h4><a routerLink="/user/{{review.username}}">{{review.username}}</a>'s review</h4>
+      {{getDate(review.date)}}
+    </div>
+    <app-star-rating [maxRating]="5" [rating]="review.stars" [active]="false"></app-star-rating>
+    <p>{{review.text}}</p>
+  </div>
+</section>

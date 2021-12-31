@@ -30,6 +30,9 @@ ul > li:nth-child(even) {
 li {
   margin: 4px 0 12px 0;
 }
+p {
+  white-space: pre-line;
+}
 .spaced {
   display: flex;
   justify-content: space-between;

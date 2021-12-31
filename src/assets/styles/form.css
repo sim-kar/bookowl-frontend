@@ -29,6 +29,9 @@ button {
   border: #321657 solid 1px;
   border-radius: 5px;
 }
+button:enabled {
+  cursor: pointer;
+}
 .error {
   color: #a23637;
   background: #f4d2d2;

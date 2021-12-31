@@ -17,6 +17,9 @@ h4 {
   font-size: 11pt;
   margin: 0 0;
 }
+p {
+  white-space: pre-line;
+}
 .review {
   display: flex;
   gap: 20px;

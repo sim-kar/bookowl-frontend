@@ -1,3 +1,6 @@
+p {
+  white-space: pre-line;
+}
 .text {
   -webkit-line-clamp: 2;
 }

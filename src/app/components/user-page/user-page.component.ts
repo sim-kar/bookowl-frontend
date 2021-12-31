@@ -19,7 +19,6 @@ export class UserPageComponent implements OnInit {
   age: number = 0;
   joined: string = '';
   user: User = {
-    email: '',
     joined: '',
     username: '',
     birthdate: '',

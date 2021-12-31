@@ -26,6 +26,7 @@ import { BooksHighestPageComponent } from './components/books-highest-page/books
 import { BooksRecentPageComponent } from './components/books-recent-page/books-recent-page.component';
 import { BookPageReviewsComponent } from './components/book-page-reviews/book-page-reviews.component';
 import { ReviewPageComponent } from './components/review-page/review-page.component';
+import { UserSettingsPageComponent } from './components/user-settings-page/user-settings-page.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { ReviewPageComponent } from './components/review-page/review-page.compon
     BooksRecentPageComponent,
     BookPageReviewsComponent,
     ReviewPageComponent,
+    UserSettingsPageComponent,
   ],
   imports: [
     BrowserModule,

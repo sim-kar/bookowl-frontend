@@ -32,11 +32,23 @@ export class UserService {
     });
   }
 
-  updateUser(username: string, email: string, password: string): Observable<{}> {
-    return this.http.put(`${this.apiBaseURL}/users`, {
+  getUserEmail(username: string): Observable<string> {
+    return this.http.get<string>(`${this.apiBaseURL}/users/${username}/email`);
+  }
+
+  updateUserEmail(username: string, email: string, password: string): Observable<{}> {
+    return this.http.put(`${this.apiBaseURL}/users/email`, {
       username,
       email,
       password,
+    });
+  }
+
+  updateUserPassword(username: string, newPassword: string, oldPassword: string): Observable<{}> {
+    return this.http.put(`${this.apiBaseURL}/users/password`, {
+      username,
+      newPassword,
+      oldPassword,
     });
   }
 

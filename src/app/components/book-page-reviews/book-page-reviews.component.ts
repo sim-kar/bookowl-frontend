@@ -20,6 +20,9 @@ export class BookPageReviewsComponent implements OnInit {
   reviews: Review[] = [];
   writeReview: boolean = false;
   userReview: Review | undefined;
+  rating: number = 0;
+  text: string = '';
+  posted: boolean = false;
 
   constructor(
     private reviewService: ReviewService,
@@ -40,22 +43,40 @@ export class BookPageReviewsComponent implements OnInit {
     });
   }
 
-  getReviews() {
+  getReviews(): void {
     this.reviewService.getReviewsForBook(this.isbn).subscribe((reviews) => {
       if (reviews) {
         this.userReview = reviews.find((review) => review.username === this.username);
-        // don't show user review with rest of reviews
+        // get current rating and text from the user's review if it exists
+        this.rating = this.userReview ? this.userReview.stars : 0;
+        this.text = this.userReview ? this.userReview.text : '';
+        // don't show user's review with rest of reviews
         this.reviews = reviews.filter((review) => review.username !== this.username);
       }
     });
   }
 
   // only get yyyy-mm-dd
-  getDate(date: string) {
+  getDate(date: string): string {
     return date.slice(0, 9);
   }
 
-  toggleReview() {
+  getRating(rating: number) {
+    this.rating = rating;
+  }
+
+  toggleReview(): void {
     this.writeReview = !this.writeReview;
+  }
+
+  addReview(): void {
+    if (!this.userReview) {
+      this.reviewService.addReview(this.username, this.isbn, this.rating, this.text)
+        .subscribe(() => { this.posted = true; });
+      return;
+    }
+
+    this.reviewService.updateReview(this.username, this.isbn, this.rating, this.text)
+      .subscribe(() => { this.posted = true; });
   }
 }

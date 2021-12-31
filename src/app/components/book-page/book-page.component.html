@@ -18,10 +18,6 @@
       <option [selected]="userStatus === 1" (click)="addStatus(1)">Reading</option>
       <option [selected]="userStatus === 2" (click)="addStatus(2)">Read</option>
     </select>
-    <!-- Don't show rating if user hasn't read book -->
-    <div *ngIf="userStatus > 0" class="rating">
-      <app-star-rating [maxRating]="5" [active]="true" ></app-star-rating>
-    </div>
   </div>
   <div class="info">
     <h2>{{book.title}}</h2>

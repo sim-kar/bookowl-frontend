@@ -4,6 +4,7 @@ import { Book } from '../../interfaces/book';
 import { BookService } from '../../services/book.service';
 import { StatusService } from '../../services/status.service';
 import { TokenStorageService } from '../../services/token-storage.service';
+import { ReviewService } from '../../services/review.service';
 
 @Component({
   selector: 'app-book-page',
@@ -30,6 +31,7 @@ export class BookPageComponent implements OnInit {
   constructor(
     private bookService: BookService,
     private statusService: StatusService,
+    private reviewService: ReviewService,
     private tokenStorageService: TokenStorageService,
     private route: ActivatedRoute,
   ) { }

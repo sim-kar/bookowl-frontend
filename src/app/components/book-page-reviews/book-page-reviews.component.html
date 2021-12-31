@@ -1,10 +1,21 @@
 <section>
   <!-- Don't show section for writing a review if user hasn't read book -->
   <div *ngIf="status > 0">
-    <button (click)="toggleReview()">Write a review</button>
+    <div class="spaced">
+      <button (click)="toggleReview()">Write a review</button>
+      <app-star-rating
+        *ngIf="writeReview"
+        [maxRating]="5"
+        [rating]="rating"
+        [active]="true"
+        (newRatingEvent)="getRating($event)"
+      >
+      </app-star-rating>
+    </div>
     <div *ngIf="writeReview">
-      <textarea rows="8" cols="60" spellcheck="true">{{userReview ? userReview.text : ''}}</textarea>
-      <div class="right"><button>Post review</button></div>
+      <textarea rows="8" cols="60" spellcheck="true" [(ngModel)]="text"></textarea>
+      <div class="right"><button (click)="addReview()">Post review</button></div>
+      <div class="success center" *ngIf="posted">Review added!</div>
     </div>
   </div>
   <ul>

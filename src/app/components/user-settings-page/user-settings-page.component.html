@@ -1,0 +1,68 @@
+<section>
+  <h2>Account settings</h2>
+  <!-- add css class .submitted after form is submitted -->
+  <form
+    class="sign-up"
+    [ngClass]="{ 'submitted': eForm.submitted }"
+    #eForm="ngForm"
+    [formGroup]="emailForm"
+    (ngSubmit)="updateEmail()"
+  >
+    <label>Current e-mail
+      <div class="email">{{currentEmail}}</div>
+    </label>
+    <label>New e-mail
+      <input type="email" size="{{inputSize}}" required email formControlName="email"/>
+    </label>
+    <div class="error" *ngIf="email?.invalid && email?.touched">
+      <div *ngIf="email?.errors?.['required']">Please enter an e-mail address.</div>
+      <div *ngIf="email?.errors?.['email']">Please enter a valid e-mail address.</div>
+    </div>
+    <label>Password
+      <input type="password" size="{{inputSize}}" required minlength="8" formControlName="password"/>
+    </label>
+    <div class="password-requirements">
+      <div *ngIf="password?.errors?.['minlength']">Password must be at least 8 characters.</div>
+      <div class="error" *ngIf="password?.errors?.['required'] && password?.touched">
+        Please enter a password.
+      </div>
+    </div>
+    <button>Change e-mail</button>
+    <div class="error center" *ngIf="eForm.submitted && emailUpdateFailed">
+      Failed to change e-mail. {{emailErrorMessage}}
+    </div>
+    <div class="success center" *ngIf="emailUpdated">E-mail successfully changed.</div>
+  </form>
+
+  <form
+    class="sign-up"
+    [ngClass]="{ 'submitted': pForm.submitted }"
+    #pForm="ngForm"
+    [formGroup]="passwordForm"
+    (ngSubmit)="updatePassword()"
+  >
+    <label>New password
+      <input type="password" size="{{inputSize}}" required minlength="8" formControlName="newPassword"/>
+    </label>
+    <div class="password-requirements">
+      <div *ngIf="newPassword?.errors?.['minlength']">Password must be at least 8 characters.</div>
+      <div class="error" *ngIf="newPassword?.errors?.['required'] && newPassword?.touched">
+        Please enter a password.
+      </div>
+    </div>
+    <label>Old password
+      <input type="password" size="{{inputSize}}" required minlength="8" formControlName="oldPassword"/>
+    </label>
+    <div class="password-requirements">
+      <div *ngIf="oldPassword?.errors?.['minlength']">Password must be at least 8 characters.</div>
+      <div class="error" *ngIf="oldPassword?.errors?.['required'] && oldPassword?.touched">
+        Please enter a password.
+      </div>
+    </div>
+    <button>Change password</button>
+    <div class="error center" *ngIf="pForm.submitted && passwordUpdateFailed">
+      Failed to change password. {{passwordErrorMessage}}
+    </div>
+    <div class="success center" *ngIf="passwordUpdated">Password was successfully changed.</div>
+  </form>
+</section>

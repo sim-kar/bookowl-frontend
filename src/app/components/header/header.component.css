@@ -20,6 +20,10 @@ h1 {
   font-weight: lighter;
   font-size: 20pt;
   margin-right: 32px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 a {
   color: inherit;

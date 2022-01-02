@@ -19,7 +19,7 @@
     </div>
   </div>
   <ul>
-    <li *ngFor="let review of reviews">
+    <li *ngFor="let review of reviews | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
       <div class="spaced">
         <div class="header">
           <h3>
@@ -39,4 +39,5 @@
         class="link">see full review</a>
     </li>
   </ul>
+  <pagination-controls class="pagination" [autoHide]="true" (pageChange)="p = $event"></pagination-controls>
 </section>

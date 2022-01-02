@@ -8,7 +8,6 @@ import { TokenStorageService } from '../../services/token-storage.service';
   selector: 'app-book-page-reviews',
   templateUrl: './book-page-reviews.component.html',
   styleUrls: [
-    '../../../assets/styles/list.css',
     '../../../assets/styles/form.css',
     './book-page-reviews.component.css',
   ],
@@ -23,6 +22,9 @@ export class BookPageReviewsComponent implements OnInit {
   rating: number = 0;
   text: string = '';
   posted: boolean = false;
+  // pagination
+  itemsPerPage: number = 10;
+  p: number = 1;
 
   constructor(
     private reviewService: ReviewService,

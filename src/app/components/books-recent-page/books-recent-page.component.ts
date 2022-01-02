@@ -14,6 +14,10 @@ import { BookService } from '../../services/book.service';
 export class BooksRecentPageComponent implements OnInit {
   recentBooks: AggregatedBook[] = [];
   imageWidth: number = 50;
+  limit: number = 100;
+  // pagination
+  p: number = 1;
+  itemsPerPage: number = 100;
 
   constructor(private bookService: BookService) { }
 
@@ -22,7 +26,7 @@ export class BooksRecentPageComponent implements OnInit {
   }
 
   getRecentBooks() {
-    this.bookService.getRecentlyUpdatedBooks(100).subscribe((books) => {
+    this.bookService.getRecentlyUpdatedBooks(this.limit).subscribe((books) => {
       this.recentBooks = books;
     });
   }

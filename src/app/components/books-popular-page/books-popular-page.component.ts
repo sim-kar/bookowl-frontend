@@ -14,6 +14,10 @@ import { AggregatedBook } from '../../interfaces/aggregated-book';
 export class BooksPopularPageComponent implements OnInit {
   popularBooks: AggregatedBook[] = [];
   imageWidth: number = 50;
+  limit: number = 100;
+  // pagination
+  p: number = 1;
+  itemsPerPage: number = 100;
 
   constructor(private bookService: BookService) { }
 
@@ -22,7 +26,7 @@ export class BooksPopularPageComponent implements OnInit {
   }
 
   getPopularBooks() {
-    this.bookService.getPopularBooks(100).subscribe((books) => {
+    this.bookService.getPopularBooks(this.limit).subscribe((books) => {
       this.popularBooks = books;
     });
   }

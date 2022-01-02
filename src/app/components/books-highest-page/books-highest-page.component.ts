@@ -14,6 +14,10 @@ import { AggregatedBook } from '../../interfaces/aggregated-book';
 export class BooksHighestPageComponent implements OnInit {
   highestRatedBooks: AggregatedBook[] = [];
   imageWidth: number = 50;
+  limit: number = 100;
+  // pagination
+  p: number = 1;
+  itemsPerPage: number = 100;
 
   constructor(private bookService: BookService) { }
 
@@ -22,7 +26,7 @@ export class BooksHighestPageComponent implements OnInit {
   }
 
   getHighestRatedBooks() {
-    this.bookService.getHighestRatedBooks(100).subscribe((books) => {
+    this.bookService.getHighestRatedBooks(this.limit).subscribe((books) => {
       this.highestRatedBooks = books;
     });
   }
@@ -30,7 +34,7 @@ export class BooksHighestPageComponent implements OnInit {
   /* Formats a float to have 2 digits after the decimal point; integers are left untouched */
   formatRating(rating: number | undefined): string {
     let output = '';
-    
+
     if (rating) {
       output = Number.isInteger(rating) ? rating.toString() : rating.toFixed(2);
     }

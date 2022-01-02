@@ -1,11 +1,18 @@
 <section>
   <h2>{{header}}</h2>
-  <div [ngClass]="list.length >= maxEntries ? 'entries-max' : 'entries'">
-    <div class="entry" *ngFor="let book of list">
+  <!-- Sets style depending on entries displayed by current pagination page,
+       or by list length if pagination event hasn't been triggered yet -->
+  <ul [ngClass]="style ? style : (list.length >= maxEntries ? 'entries-max' : 'entries')">
+    <li
+      *ngFor="let book of list
+      | paginate: { id: id, itemsPerPage: maxEntries, currentPage: p, totalItems: list.length }"
+      class="entry"
+    >
       <a routerLink="/book/{{book.isbn}}" [state]="{ book: book }">
         <img alt="{{book.title}} book cover" src="{{book.cover}}" height="{{imageHeight}}"/>
         {{book.title}}
       </a>
-    </div>
-  </div>
+    </li>
+  </ul>
+  <pagination-controls class="pagination" id="{{id}}" [autoHide]="true" (pageChange)="onPageChange($event)"></pagination-controls>
 </section>

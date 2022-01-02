@@ -73,3 +73,17 @@ p {
   margin-top: 0.2em;
   background: white;
 }
+.pagination {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 11pt;
+}
+.pagination /deep/ .ngx-pagination .current {
+  background: #492080;
+  border-radius: 5px;
+}
+.spaced {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}

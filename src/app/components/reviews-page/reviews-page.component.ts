@@ -7,13 +7,11 @@ import { Review } from '../../interfaces/review';
   templateUrl: './reviews-page.component.html',
   styleUrls: [
     '../../../assets/styles/page-width.css',
-    '../../../assets/styles/list.css',
     './reviews-page.component.css',
   ],
 })
 export class ReviewsPageComponent implements OnInit {
   reviews: Review[] = [];
-  imageWidth: number = 50;
 
   constructor(private reviewService: ReviewService) { }
 

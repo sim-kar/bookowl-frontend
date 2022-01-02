@@ -20,13 +20,13 @@ h3 {
   padding: 0;
 }
 p {
+  white-space: pre-line;
   margin: 4px 0 0 0;
   padding: 0;
 }
 .entry {
   display: flex;
   padding: 16px 4px 12px 4px;
-  /*margin-bottom: 4px;*/
   border-top: lightgrey solid 1px;
 }
 /* max-width of img and min-width of this container keeps width of column consistent */
@@ -39,6 +39,36 @@ p {
   align-items: baseline;
   white-space: pre;
 }
+.spaced {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.star {
+  color: darkgoldenrod;
+  font-size: 14pt;
+  align-self: center;
+}
+.rating {
+  font-family: sans-serif;
+  font-size: 11pt;
+}
+.link {
+  display: block;
+  font-family: sans-serif;
+  font-size: 11pt;
+  color: #492080;
+  margin-top: 4px;
+}
+.pagination {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 11pt;
+}
+.pagination /deep/ .ngx-pagination .current {
+  background: #492080;
+  border-radius: 5px;
+}
 .text {
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -46,6 +76,9 @@ p {
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: justify;
+}
+.review {
+  -webkit-line-clamp: 2;
 }
 /* Alternative method for replacing overflow with ellipsis if webkit version isn't usable */
 /* From: https://hackingui.com/a-pure-css-solution-for-multiline-text-truncation/ */
@@ -72,18 +105,4 @@ p {
   height: 1em;
   margin-top: 0.2em;
   background: white;
-}
-.pagination {
-  text-align: center;
-  font-family: sans-serif;
-  font-size: 11pt;
-}
-.pagination /deep/ .ngx-pagination .current {
-  background: #492080;
-  border-radius: 5px;
-}
-.spaced {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
 }

@@ -28,6 +28,7 @@ import { BooksRecentPageComponent } from './components/books-recent-page/books-r
 import { BookPageReviewsComponent } from './components/book-page-reviews/book-page-reviews.component';
 import { ReviewPageComponent } from './components/review-page/review-page.component';
 import { UserSettingsPageComponent } from './components/user-settings-page/user-settings-page.component';
+import { ListComponent } from './components/list/list.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { UserSettingsPageComponent } from './components/user-settings-page/user-
     BookPageReviewsComponent,
     ReviewPageComponent,
     UserSettingsPageComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule,

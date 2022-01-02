@@ -22,6 +22,7 @@ export class BookPageReviewsComponent implements OnInit {
   rating: number = 0;
   text: string = '';
   posted: boolean = false;
+  deleted: boolean = false;
   // pagination
   itemsPerPage: number = 10;
   p: number = 1;
@@ -74,11 +75,28 @@ export class BookPageReviewsComponent implements OnInit {
   addReview(): void {
     if (!this.userReview) {
       this.reviewService.addReview(this.username, this.isbn, this.rating, this.text)
-        .subscribe(() => { this.posted = true; });
+        .subscribe(() => {
+          this.posted = true;
+          this.deleted = false;
+        });
       return;
     }
 
     this.reviewService.updateReview(this.username, this.isbn, this.rating, this.text)
-      .subscribe(() => { this.posted = true; });
+      .subscribe(() => {
+        this.posted = true;
+        this.deleted = false;
+      });
+  }
+
+  deleteReview() {
+    this.reviewService.deleteReview(this.username, this.isbn)
+      .subscribe(() => {
+        this.deleted = true;
+        this.posted = false;
+        this.userReview = undefined;
+        this.text = '';
+        this.rating = 0;
+      });
   }
 }

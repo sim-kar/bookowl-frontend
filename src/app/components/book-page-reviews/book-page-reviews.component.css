@@ -85,3 +85,8 @@ p {
   background: #492080;
   border-radius: 5px;
 }
+.delete {
+  background: #a23637;
+  border: #8e2223 solid 1px;
+  margin-right: 8px;
+}

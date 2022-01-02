@@ -14,8 +14,12 @@
     </div>
     <div *ngIf="writeReview">
       <textarea rows="8" cols="60" spellcheck="true" [(ngModel)]="text"></textarea>
-      <div class="right"><button (click)="addReview()">Post review</button></div>
+      <div class="right">
+        <button *ngIf="userReview || posted" class="delete" (click)="deleteReview()">Delete review</button>
+        <button (click)="addReview()">Post review</button>
+      </div>
       <div class="success center" *ngIf="posted">Review added!</div>
+      <div class="error center" *ngIf="deleted">Review deleted!</div>
     </div>
   </div>
   <ul>

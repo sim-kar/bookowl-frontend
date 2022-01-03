@@ -13,12 +13,10 @@ header {
   align-items: center;
   width: 1200px;
   margin: 0 8px;
-  font-family: Verdana, sans-serif;
   white-space: nowrap;
 }
 h1 {
-  font-weight: lighter;
-  font-size: 20pt;
+  font-weight: 200;
   margin-right: 32px;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -41,5 +39,5 @@ a {
   margin: 0;
 }
 .bold {
-  font-weight: bold;
+  font-weight: 700;
 }

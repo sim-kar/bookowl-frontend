@@ -15,8 +15,7 @@ ul {
 }
 h4 {
   margin-bottom: 0;
-  font-family: sans-serif;
-  font-size: 11pt;
+  font-size: 16px;
 }
 h3 {
   margin: 0;
@@ -27,8 +26,12 @@ h2 {
 }
 textarea {
   resize: none;
-  max-width: 600px;
+  width: 594px;
   padding: 8px;
+}
+div {
+  margin: 0;
+  padding: 0;
 }
 button {
   display: inline-block;
@@ -71,15 +74,13 @@ p {
 }
 .link {
   display: block;
-  font-family: sans-serif;
-  font-size: 11pt;
+  font-size: 15px;
   color: #492080;
   margin-top: 4px;
 }
 .pagination {
   text-align: center;
-  font-family: sans-serif;
-  font-size: 11pt;
+  font-size: 15px;
 }
 .pagination /deep/ .ngx-pagination .current {
   background: #492080;

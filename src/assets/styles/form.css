@@ -5,12 +5,11 @@ form {
 label {
   display: flex;
   flex-direction: column;
-  font-family: sans-serif;
   font-weight: bold;
-  font-size: 10pt;
+  font-size: 14px;
 }
 input, select, textarea {
-  font-size: 12pt;
+  font-size: 16px;
   padding: 8px 8px;
   margin: 4px 0;
   background: #f4f7f9;
@@ -32,14 +31,16 @@ button {
 button:enabled {
   cursor: pointer;
 }
+a {
+  text-decoration: none;
+}
 .error {
   color: #a23637;
   background: #f4d2d2;
   padding: 8px 12px;
   margin: 4px 0 8px 0;
   border-radius: 2px;
-  font-family: sans-serif;
-  font-size: 10pt;
+  font-size: 13px;
 }
 .success {
   color: #36a237;
@@ -47,8 +48,7 @@ button:enabled {
   padding: 8px 12px;
   margin: 4px 0 8px 0;
   border-radius: 2px;
-  font-family: sans-serif;
-  font-size: 10pt;
+  font-size: 13px;
 }
 .bottom-link {
   text-align: center;
@@ -58,11 +58,9 @@ button:enabled {
   text-align: center;
 }
 .password-requirements {
-  /*display: inline;*/
-  color: gray;
+  color: dimgray;
   min-height: 1.5em;
   margin-top: -3px;
-  font-family: sans-serif;
-  font-size: 9pt;
+  font-size: 13px;
 }
 

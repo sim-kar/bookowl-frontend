@@ -9,7 +9,7 @@ import { ReviewService } from '../../services/review.service';
 @Component({
   selector: 'app-book-page',
   templateUrl: './book-page.component.html',
-  styleUrls: ['./book-page.component.css', '../../../assets/styles/form.css'],
+  styleUrls: ['../../../assets/styles/form.css', './book-page.component.css'],
 })
 export class BookPageComponent implements OnInit {
   username: string = '';

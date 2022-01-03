@@ -14,6 +14,7 @@ import { ReviewService } from '../../services/review.service';
 export class BookPageComponent implements OnInit {
   username: string = '';
   userStatus: number = -1;
+  selectStatus: number = -1;
   language: string = '';
   book: Book = {
     authors: [],
@@ -46,6 +47,7 @@ export class BookPageComponent implements OnInit {
           .subscribe((status) => {
             if (status) {
               this.userStatus = status.status;
+              this.selectStatus = status.status;
               this.book = status.book;
               this.language = this.getLanguageFromCode(this.book.language);
             }
@@ -73,6 +75,15 @@ export class BookPageComponent implements OnInit {
     }
   }
 
+  updateStatus(): void {
+    if (this.selectStatus === -1) {
+      this.remove();
+      return;
+    }
+
+    this.addStatus(this.selectStatus);
+  }
+
   addStatus(statusCode: number): void {
     if (this.userStatus === -1) {
       // add book with status since it might be from open API, i.e. not in db yet
@@ -83,16 +94,12 @@ export class BookPageComponent implements OnInit {
     }
 
     this.statusService.updateStatus(this.username, this.book.isbn, statusCode)
-      .subscribe(() => {
-        this.userStatus = statusCode;
-      });
+      .subscribe(() => { this.userStatus = statusCode; });
   }
 
   remove(): void {
     this.statusService.deleteStatus(this.username, this.book.isbn)
-      .subscribe(() => {
-        this.userStatus = -1;
-      });
+      .subscribe(() => { this.userStatus = -1; });
   }
 
   /* Convert language code to language in english */

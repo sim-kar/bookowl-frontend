@@ -12,11 +12,11 @@
     >bookmark</span>
     </div>
     <!-- Let the user update status if logged in -->
-    <select *ngIf="username">
-      <option [selected]="userStatus === -1" (click)="remove()">Unread</option>
-      <option [selected]="userStatus === 0" (click)="addStatus(0)">Want to read</option>
-      <option [selected]="userStatus === 1" (click)="addStatus(1)">Reading</option>
-      <option [selected]="userStatus === 2" (click)="addStatus(2)">Read</option>
+    <select *ngIf="username" [(ngModel)]="selectStatus" (change)="updateStatus()">
+      <option [ngValue]="-1">Unread</option>
+      <option [ngValue]="0">Want to read</option>
+      <option [ngValue]="1">Reading</option>
+      <option [ngValue]="2">Read</option>
     </select>
   </div>
   <div class="info">

@@ -32,6 +32,6 @@ export class ReviewPageComponent implements OnInit {
 
   // only get yyyy-mm-dd
   getDate(date: string) {
-    return date.slice(0, 9);
+    return date.slice(0, 10);
   }
 }

@@ -61,7 +61,7 @@ export class BookPageReviewsComponent implements OnInit {
 
   // only get yyyy-mm-dd
   getDate(date: string): string {
-    return date.slice(0, 9);
+    return date.slice(0, 10);
   }
 
   getRating(rating: number) {

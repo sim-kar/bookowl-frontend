@@ -36,7 +36,7 @@ export class UserPageComponent implements OnInit {
       this.userService.getUser(params['username']).subscribe((user) => {
         this.user = user;
         this.age = this.getAge(user.birthdate);
-        this.joined = user.joined.slice(0, 9); // only get yyyy-mm-dd
+        this.joined = user.joined.slice(0, 10); // only get yyyy-mm-dd
         this.getBooksWithStatus(0).subscribe((books) => { this.wantToRead = books; });
         this.getBooksWithStatus(1).subscribe((books) => { this.reading = books; });
         this.getBooksWithStatus(2).subscribe((books) => { this.read = books; });

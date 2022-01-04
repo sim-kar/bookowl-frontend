@@ -1,5 +1,5 @@
 <section>
-  <h2>{{header}}</h2>
+  <h2><a [routerLink]="link" [state]="withState? { list: list } : undefined">{{header}}</a></h2>
   <!-- Sets style depending on entries displayed by current pagination page,
        or by list length if pagination event hasn't been triggered yet -->
   <ul [ngClass]="style ? style : (list.length >= maxEntries ? 'entries-max' : 'entries')">

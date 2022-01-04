@@ -10,6 +10,8 @@ import { Book } from '../../interfaces/book';
 export class HorizontalListComponent implements OnInit {
   @Input() list: Book[] = [];
   @Input() header: string = '';
+  @Input() link: string | undefined;
+  @Input() withState: boolean = false;
   imageHeight: number = 192;
   maxEntries: number = 8;
   style: string = '';

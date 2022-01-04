@@ -10,7 +10,6 @@ import { Book } from '../../interfaces/book';
 })
 export class SearchResultsPageComponent implements OnInit {
   books: Book[] = [];
-  imageHeight: number = 192;
   maxResults: number = 40;
 
   constructor(private bookService: BookService, private route: ActivatedRoute) { }

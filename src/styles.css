@@ -66,6 +66,10 @@
   local('MaterialIcons-Regular'),
   url(src/assets/fonts/MaterialIcons-Regular.ttf) format('truetype');
 }
+/* Fixes double scrollbars when using pagination in chromium browsers */
+html {
+  overflow-y: hidden;
+}
 body, html {
   height: 100%;
   margin: 0;

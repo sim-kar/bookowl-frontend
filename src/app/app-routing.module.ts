@@ -22,6 +22,9 @@ import { ReviewPageComponent } from './components/review-page/review-page.compon
 import {
   UserSettingsPageComponent,
 } from './components/user-settings-page/user-settings-page.component';
+import {
+  BooksUserStatusPageComponent,
+} from './components/books-user-status-page/books-user-status-page.component';
 
 const routes: Routes = [
   { path: '', component: FrontPageComponent },
@@ -34,6 +37,7 @@ const routes: Routes = [
   { path: 'search/:find/:keyword', component: SearchResultsPageComponent },
   { path: 'user/:username', component: UserPageComponent },
   { path: 'user/:username/settings', component: UserSettingsPageComponent },
+  { path: 'user/:username/:status', component: BooksUserStatusPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: SignUpPageComponent },
 ];

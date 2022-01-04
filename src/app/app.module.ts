@@ -29,6 +29,7 @@ import { BookPageReviewsComponent } from './components/book-page-reviews/book-pa
 import { ReviewPageComponent } from './components/review-page/review-page.component';
 import { UserSettingsPageComponent } from './components/user-settings-page/user-settings-page.component';
 import { ListComponent } from './components/list/list.component';
+import { BooksUserStatusPageComponent } from './components/books-user-status-page/books-user-status-page.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { ListComponent } from './components/list/list.component';
     ReviewPageComponent,
     UserSettingsPageComponent,
     ListComponent,
+    BooksUserStatusPageComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,7 @@
         [maxRating]="5"
         [rating]="rating"
         [active]="true"
-        (newRatingEvent)="getRating($event)"
+        (newRatingEvent)="rating = $event"
       >
       </app-star-rating>
     </div>
@@ -34,7 +34,7 @@
             <app-star-rating [maxRating]="5" [rating]="review.stars" [active]="false"></app-star-rating>
           </span>
         </div>
-        {{getDate(review.date)}}
+        {{getFormattedDate(review.date)}}
       </div>
       <p class="text">{{review.text}}</p>
       <a

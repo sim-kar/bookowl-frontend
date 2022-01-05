@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 
@@ -7,7 +7,9 @@ import { UserService } from '../../services/user.service';
   templateUrl: './sign-up-page.component.html',
   styleUrls: ['./sign-up-page.component.css', '../../../assets/styles/form.css'],
 })
-export class SignUpPageComponent implements OnInit {
+
+/** A page with a form for creating a new user account. */
+export class SignUpPageComponent {
   inputSize: number = 40;
   errorMessage: string = '';
   signedUp: boolean = false;
@@ -36,15 +38,16 @@ export class SignUpPageComponent implements OnInit {
 
   constructor(private userService: UserService) { }
 
-  ngOnInit(): void {
-  }
-
   get username() { return this.signUpForm.get('username'); }
   get email() { return this.signUpForm.get('email'); }
   get password() { return this.signUpForm.get('password'); }
   get birthday() { return this.signUpForm.get('birthday'); }
   get gender() { return this.signUpForm.get('gender'); }
 
+  /**
+   * Submit the sign-up form. Tries to add a new user; if unsuccessful it gets the error from
+   * the HTTP response.
+   */
   onSubmit(): void {
     if (this.signUpForm.invalid) {
       return;

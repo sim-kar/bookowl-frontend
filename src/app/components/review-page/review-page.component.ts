@@ -6,13 +6,16 @@ import { ReviewService } from '../../services/review.service';
 @Component({
   selector: 'app-review',
   templateUrl: './review-page.component.html',
-  styleUrls: ['./review-page.component.css'],
+  styleUrls: ['../../../assets/styles/page-width.css', './review-page.component.css'],
 })
+
+/** A page displaying a user review of a book */
 export class ReviewPageComponent implements OnInit {
   review: Review | undefined;
 
   constructor(private reviewService: ReviewService, private route: ActivatedRoute) { }
 
+  /** Get the review. */
   ngOnInit(): void {
     // if review is already in session history, no need to load from db
     if (window.history.state.review) {
@@ -30,8 +33,13 @@ export class ReviewPageComponent implements OnInit {
       });
   }
 
-  // only get yyyy-mm-dd
-  getDate(date: string) {
+  /**
+   * Format the date to YYYY-MM-DD.
+   *
+   * @param date the date to format.
+   * @returns the formatted date.
+   */
+  getFormattedDate(date: string): string {
     return date.slice(0, 10);
   }
 }

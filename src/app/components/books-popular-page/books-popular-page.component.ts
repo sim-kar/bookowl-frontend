@@ -5,14 +5,12 @@ import { Book } from '../../interfaces/book';
 @Component({
   selector: 'app-books-popular-page',
   templateUrl: './books-popular-page.component.html',
-  styleUrls: [
-    './books-popular-page.component.css',
-    '../../../assets/styles/page-width.css',
-  ],
+  styleUrls: ['../../../assets/styles/page-width.css', './books-popular-page.component.css'],
 })
+
+/** A page displaying the most popular books. */
 export class BooksPopularPageComponent implements OnInit {
   books: Book[] = [];
-  ratings: number[] = [];
   limit: number = 100;
 
   constructor(private bookService: BookService) { }
@@ -21,12 +19,10 @@ export class BooksPopularPageComponent implements OnInit {
     this.getPopularBooks();
   }
 
+  /** Get the most popular books. */
   getPopularBooks() {
     this.bookService.getPopularBooks(this.limit).subscribe((books) => {
-      books.forEach((entry) => {
-        this.books.push(entry.book);
-        if (entry.averageRating) { this.ratings.push(entry.averageRating); }
-      });
+      books.forEach((entry) => { this.books.push(entry.book); });
     });
   }
 }

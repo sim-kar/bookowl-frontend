@@ -1,3 +1,4 @@
+/* Shared style for setting the width of pages. */
 :host {
   width: 1200px;
 }

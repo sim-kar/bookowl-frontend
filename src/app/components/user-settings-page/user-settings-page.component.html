@@ -6,7 +6,7 @@
     [ngClass]="{ 'submitted': eForm.submitted }"
     #eForm="ngForm"
     [formGroup]="emailForm"
-    (ngSubmit)="updateEmail()"
+    (ngSubmit)="onEmailSubmit()"
   >
     <label>Current e-mail
       <div class="email">{{currentEmail}}</div>
@@ -39,7 +39,7 @@
     [ngClass]="{ 'submitted': pForm.submitted }"
     #pForm="ngForm"
     [formGroup]="passwordForm"
-    (ngSubmit)="updatePassword()"
+    (ngSubmit)="onPasswordSubmit()"
   >
     <label>New password
       <input type="password" size="{{inputSize}}" required minlength="8" formControlName="newPassword"/>

@@ -8,12 +8,15 @@ import { Book } from '../../interfaces/book';
   templateUrl: './search-results-page.component.html',
   styleUrls: ['./search-results-page.component.css', '../../../assets/styles/page-width.css'],
 })
+
+/** A page displaying search results. */
 export class SearchResultsPageComponent implements OnInit {
   books: Book[] = [];
   maxResults: number = 40;
 
   constructor(private bookService: BookService, private route: ActivatedRoute) { }
 
+  /** Get the search results using the URL parameters. */
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       if (params['find'] === 'book') {

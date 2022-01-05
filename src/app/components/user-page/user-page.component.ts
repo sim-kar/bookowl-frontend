@@ -12,6 +12,8 @@ import { Status } from '../../interfaces/status';
   templateUrl: './user-page.component.html',
   styleUrls: ['./user-page.component.css', '../../../assets/styles/page-width.css'],
 })
+
+/** A user's bookshelf, displaying the books that the user has added statuses for. */
 export class UserPageComponent implements OnInit {
   wantToRead: Book[] = [];
   reading: Book[] = [];
@@ -31,6 +33,7 @@ export class UserPageComponent implements OnInit {
     private route: ActivatedRoute,
   ) { }
 
+  /** Get the user and the user's books. */
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.userService.getUser(params['username']).subscribe((user) => {
@@ -44,6 +47,12 @@ export class UserPageComponent implements OnInit {
     });
   }
 
+  /**
+   * Get the user's books with the given status.
+   *
+   * @param statusCode the status to get.
+   * @returns an Observable with the books.
+   */
   getBooksWithStatus(statusCode: number): Observable<Book[]> {
     const output: Subject<Book[]> = new Subject<Book[]>();
     this.statusService.getUserStatuses(this.user.username, statusCode)
@@ -58,14 +67,17 @@ export class UserPageComponent implements OnInit {
     return output.asObservable();
   }
 
+  /** Get the user's age. */
   getAge(date: string) {
     const birthday = new Date(date);
     const today = new Date();
-    let thisYear = 0;
 
+    // add a year to age if birthday has already been this year
+    let thisYear = 0;
     if (today.getMonth() > birthday.getMonth()) {
       thisYear = 1;
-    } else if ((today.getMonth() === birthday.getMonth()) && today.getDate() > birthday.getDate()) {
+    } else if ((today.getMonth() === birthday.getMonth())
+      && today.getDate() >= birthday.getDate()) {
       thisYear = 1;
     }
 

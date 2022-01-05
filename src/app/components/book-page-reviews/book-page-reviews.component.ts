@@ -8,10 +8,13 @@ import { TokenStorageService } from '../../services/token-storage.service';
   selector: 'app-book-page-reviews',
   templateUrl: './book-page-reviews.component.html',
   styleUrls: [
+    '../../../assets/styles/page-width.css',
     '../../../assets/styles/form.css',
     './book-page-reviews.component.css',
   ],
 })
+
+/** Displays reviews for a book, and lets a user write a review. */
 export class BookPageReviewsComponent implements OnInit {
   @Input() status: number = -1;
   isbn: string = '';
@@ -33,6 +36,7 @@ export class BookPageReviewsComponent implements OnInit {
     private tokenStorageService: TokenStorageService,
   ) { }
 
+  /** Get book reviews and user if logged in.  */
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.isbn = params['isbn'];
@@ -46,6 +50,7 @@ export class BookPageReviewsComponent implements OnInit {
     });
   }
 
+  /** Get book reviews. */
   getReviews(): void {
     this.reviewService.getReviewsForBook(this.isbn).subscribe((reviews) => {
       if (reviews) {
@@ -59,19 +64,22 @@ export class BookPageReviewsComponent implements OnInit {
     });
   }
 
-  // only get yyyy-mm-dd
-  getDate(date: string): string {
+  /**
+   * Format the date to YYYY-MM-DD.
+   *
+   * @param date the date to format.
+   * @returns the formatted date.
+   */
+  getFormattedDate(date: string): string {
     return date.slice(0, 10);
   }
 
-  getRating(rating: number) {
-    this.rating = rating;
-  }
-
+  /** Toggle the container for writing a review on or off */
   toggleReview(): void {
     this.writeReview = !this.writeReview;
   }
 
+  /** Add a review if it doesn't already exist, or update the review otherwise. */
   addReview(): void {
     if (!this.userReview) {
       this.reviewService.addReview(this.username, this.isbn, this.rating, this.text)
@@ -89,6 +97,7 @@ export class BookPageReviewsComponent implements OnInit {
       });
   }
 
+  /** Delete a review. */
   deleteReview() {
     this.reviewService.deleteReview(this.username, this.isbn)
       .subscribe(() => {

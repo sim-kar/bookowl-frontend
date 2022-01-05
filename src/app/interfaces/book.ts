@@ -1,3 +1,4 @@
+/** A book with a unique ISBN. */
 export interface Book {
   isbn: string;
   title: string;

@@ -1,13 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css'],
 })
-export class FooterComponent implements OnInit {
-  constructor() { }
 
-  ngOnInit(): void {
-  }
+/** A footer, used to display information about the website. */
+export class FooterComponent {
 }

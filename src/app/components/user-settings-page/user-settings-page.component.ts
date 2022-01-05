@@ -8,6 +8,8 @@ import { UserService } from '../../services/user.service';
   templateUrl: './user-settings-page.component.html',
   styleUrls: ['../../../assets/styles/form.css', './user-settings-page.component.css'],
 })
+
+/** A page with forms for updating user settings, such as email and password. */
 export class UserSettingsPageComponent implements OnInit {
   username: string = '';
   currentEmail: string = '';
@@ -43,6 +45,7 @@ export class UserSettingsPageComponent implements OnInit {
 
   constructor(private userService: UserService, private route: ActivatedRoute) { }
 
+  /** Get the username and (censored) email. */
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.username = params['username'];
@@ -58,7 +61,11 @@ export class UserSettingsPageComponent implements OnInit {
   get newPassword() { return this.passwordForm.get('newPassword'); }
   get oldPassword() { return this.passwordForm.get('oldPassword'); }
 
-  updateEmail(): void {
+  /**
+   * Submit the email form. Tries to change the user's email; if unsuccessful it gets the error from
+   * the HTTP response.
+   */
+  onEmailSubmit(): void {
     if (this.emailForm.invalid) {
       return;
     }
@@ -83,7 +90,11 @@ export class UserSettingsPageComponent implements OnInit {
     });
   }
 
-  updatePassword(): void {
+  /**
+   * Submit the password form. Tries to change the user's password; if unsuccessful it gets the
+   * error from the HTTP response.
+   */
+  onPasswordSubmit(): void {
     if (this.passwordForm.invalid) {
       return;
     }

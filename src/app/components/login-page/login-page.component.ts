@@ -8,6 +8,8 @@ import { TokenStorageService } from '../../services/token-storage.service';
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css', '../../../assets/styles/form.css'],
 })
+
+/** A page with a form for user log in. */
 export class LoginPageComponent implements OnInit {
   inputSize: number = 40;
   errorMessage: string = '';
@@ -28,6 +30,7 @@ export class LoginPageComponent implements OnInit {
     private tokenStorageService: TokenStorageService,
   ) { }
 
+  /** Check if a user is logged in. */
   ngOnInit(): void {
     if (this.tokenStorageService.getToken()) {
       this.loggedIn = true;
@@ -37,6 +40,10 @@ export class LoginPageComponent implements OnInit {
   get username() { return this.loginForm.get('username'); }
   get password() { return this.loginForm.get('password'); }
 
+  /**
+   * Submit the log-in form. Sets an authorization token if authentication is successful,
+   * otherwise gets the error from the HTTP response.
+   */
   onSubmit(): void {
     if (this.loginForm.invalid) {
       return;

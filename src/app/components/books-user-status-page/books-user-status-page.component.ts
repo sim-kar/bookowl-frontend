@@ -6,8 +6,13 @@ import { Book } from '../../interfaces/book';
 @Component({
   selector: 'app-books-user-status-page',
   templateUrl: './books-user-status-page.component.html',
-  styleUrls: ['./books-user-status-page.component.css'],
+  styleUrls: ['../../../assets/styles/page-width.css', './books-user-status-page.component.css'],
 })
+
+/**
+ * A page displaying a user's books with a certain status. The status can be read, reading,
+ * or want to read.
+ */
 export class BooksUserStatusPageComponent implements OnInit {
   username: string = '';
   header: string = '';
@@ -16,6 +21,7 @@ export class BooksUserStatusPageComponent implements OnInit {
   constructor(private statusService: StatusService, private route: ActivatedRoute) {
   }
 
+  /** Get the username, the status as a string, and the user's books with that status. */
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.username = params['username'];
@@ -37,6 +43,7 @@ export class BooksUserStatusPageComponent implements OnInit {
     });
   }
 
+  /** Get the user's books with the given status. */
   getBooks(statusString: string): void {
     let statusCode = -1;
 

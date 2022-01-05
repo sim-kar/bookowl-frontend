@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -7,7 +7,9 @@ import { Router } from '@angular/router';
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.css'],
 })
-export class SearchBarComponent implements OnInit {
+
+/** A search bar for finding books by title or author. */
+export class SearchBarComponent {
   searchForm = new FormGroup({
     keyword: new FormControl(''),
     find: new FormControl('book'),
@@ -15,9 +17,7 @@ export class SearchBarComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
-  }
-
+  /** Navigate to search results page with parameters from form. */
   onSubmit(): void {
     const searchFormValues = this.searchForm.value;
     this.router.navigateByUrl(`/search/${searchFormValues.find}/${searchFormValues.keyword}`);

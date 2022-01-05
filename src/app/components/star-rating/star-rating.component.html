@@ -4,7 +4,7 @@
       *ngIf="active"
       class="reset"
       (click)="reset()"
-      (mouseover)="previewRating(-1)"
+      (mouseover)="previewStars(-1)"
       (mouseout)="setStars()"
     >
       disabled_by_default
@@ -12,8 +12,8 @@
     <span
       *ngFor="let star of stars; let i = index"
       class="star"
-      (click)="active && setRating(i)"
-      (mouseover)="active && previewRating(i)"
+      (click)="active && onRatingChange(i)"
+      (mouseover)="active && previewStars(i)"
       (mouseout)="active && setStars()"
     >
       {{star}}

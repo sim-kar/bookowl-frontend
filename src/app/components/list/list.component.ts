@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Book } from '../../interfaces/book';
 import { Review } from '../../interfaces/review';
 
@@ -8,8 +8,10 @@ import { Review } from '../../interfaces/review';
   styleUrls: ['./list.component.css'],
 })
 
-/* Shows a list of books OR a list of reviews */
-export class ListComponent implements OnInit {
+/** Displays a list of books, or a list of reviews, depending on the given input. Note that only
+ * the list of books will be displayed if both are given. Has built-in pagination.
+ */
+export class ListComponent {
   @Input() books: Book[] | undefined;
   @Input() reviews: Review[] | undefined;
   @Input() ratings: number[] | undefined;
@@ -20,10 +22,12 @@ export class ListComponent implements OnInit {
   p: number = 1;
   itemsPerPage: number = 100;
 
-  ngOnInit(): void {
-  }
-
-  /* Formats a float to have 2 digits after the decimal point; integers are left untouched */
+  /**
+   * Rounds a floating number to 2 decimals; integers are left untouched.
+   *
+   * @param rating the number to format.
+   * @returns floating number with two decimals, or integer, as a string.
+   */
   formatRating(rating: number | undefined): string {
     let output = '';
 

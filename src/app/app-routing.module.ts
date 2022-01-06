@@ -25,6 +25,7 @@ import {
 import {
   BooksUserStatusPageComponent,
 } from './components/books-user-status-page/books-user-status-page.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', component: FrontPageComponent },
@@ -40,6 +41,7 @@ const routes: Routes = [
   { path: 'user/:username/:status', component: BooksUserStatusPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: SignUpPageComponent },
+  { path: '**', component: PageNotFoundComponent }, // wildcard route for 404 page
 ];
 
 @NgModule({

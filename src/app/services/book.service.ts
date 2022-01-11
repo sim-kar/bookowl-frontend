@@ -102,13 +102,14 @@ export class BookService {
     );
   }
 
+  // not currently active
   /**
    * Adds a book.
    *
    * @param book the book to add.
    * @returns an Observable with a message from the server.
    */
-  addBook(book: Book): Observable<{}> {
-    return this.http.post(`${this.apiBaseURL}/books`, book);
-  }
+  // addBook(book: Book): Observable<{}> {
+  //   return this.http.post(`${this.apiBaseURL}/books`, book);
+  // }
 }

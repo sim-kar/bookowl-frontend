@@ -48,6 +48,14 @@ external API in GoogleBooks for extended functionality.
 ## Screenshots
 ![The front page of the bookowl website](./img/bookowl-screenshot.png)
 
+![Searching for books by Stephen King on the bookowl website](./img/bookowl-screenshot2.png)
+
+![A user's personal bookshelf on the bookowl website](./img/bookowl-screenshot3.png)
+
+![Changing the password on the user setting's page on the bookowl website](./img/bookowl-screenshot4.png)
+
+![The page for the book American Gods on bookowl, marked as 'reading' by the user and featuring a user review](./img/bookowl-screenshot5.png)
+
 
 ## Setup
 For all project dependencies see *package.json*.
